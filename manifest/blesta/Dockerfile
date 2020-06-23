@@ -16,8 +16,8 @@ RUN apk --update add ca-certificates && \
 
 RUN \
  apk --update add tar unzip zip curl gettext nginx php php-common php-pdo_mysql php-curl php-openssl \
- php-json php-ldap php-libxml php-mailparse php-iconv php-mbstring \
- php-gmp php-imap php-simplexml php-zlib tini \
+ && php-json php-ldap php-libxml php-mailparse php-iconv php-mbstring \
+ && php-gmp php-imap php-simplexml php-zlib tini \
  && mkdir -p /run/nginx
  
 RUN \
