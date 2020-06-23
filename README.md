@@ -1,6 +1,6 @@
 # Blesta Dockerfile
 
-[![Docker Repository on Quay](https://quay.io/repository/ccarney/pterodactyl-panel/status "Docker Repository on Quay")](https://quay.io/repository/terrahost/docker-blesta)
+[![Docker Repository on Quay](https://quay.io/repository/terrahost/docker-blesta/status "Docker Repository on Quay")](https://quay.io/repository/terrahost/docker-blesta)
 
 Blesta, the billing platform for hosting providers... In a Container!
 
