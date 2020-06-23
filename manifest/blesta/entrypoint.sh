@@ -4,33 +4,6 @@
 # /entrypoint.sh - Manages the startup of Blesta
 ###
 
-# Prep Container for usage
-function init {
-    # Create the storage/cache directories
-    if [ ! -d /data/storage ]; then
-        mkdir -p /data/storage
-        cat .storage.tmpl | while read line; do
-            mkdir -p "/data/${line}"
-        done
-        chown -R nginx:nginx /data/storage
-    fi
-
-    if [ ! -d /data/cache ]; then
-        mkdir -p /data/cache
-        chown -R nginx:nginx /data/cache
-    fi
-
-    # destroy links (or files) and recreate them
-    rm -rf storage
-    ln -s /data/storage storage
-
-    rm -rf bootstrap/cache
-    ln -s /data/cache bootstrap/cache
-
-    rm -rf .env
-    ln -s /data/pterodactyl.conf .env
-}
-
 # Runs the initial configuration on every startup
 function startServer {
 
@@ -57,7 +30,7 @@ function startServer {
         echo "[Warning] Disabling Workers (cron); It is recommended to keep these enabled unless you know what you are doing."
     fi
 
-    /usr/sbin/php-fpm7 --nodaemonize -c /etc/php7 &
+    /usr/sbin/php-fpm --nodaemonize -c /etc/php &
 
     exec /usr/sbin/nginx -g "daemon off;"
 }

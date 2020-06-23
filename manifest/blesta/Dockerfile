@@ -15,9 +15,9 @@ RUN apk --update add ca-certificates && \
     echo "https://dl.bintray.com/php-alpine/v3.11/php-7.4" >> /etc/apk/repositories
 
 RUN \
- apk --update add curl gettext nginx php7 php7 php7-bcmath php7-common php7-dom php7-fileinfo \
- php7-fpm php7-gd php7-memcached php7-mbstring php7-openssl php7-pdo php7-phar php7-json \
- php7-pdo_mysql php7-session php7-simplexml php7-tokenizer php7-ctype php7-zlib php7-zip tini \
+ apk --update add tar unzip zip curl gettext nginx php php-common php-pdo_mysql php-curl php-openssl \
+ php-json php-ldap php-libxml php-mailparse php-iconv php-mbstring \
+ php-gmp php-imap php-simplexml php-zlib tini \
  && mkdir -p /run/nginx
  
 RUN \
