@@ -21,7 +21,7 @@ RUN \
  && mkdir -p /run/nginx
  
 RUN \
- curl -Lo blesta.zip https://account.blesta.com/client/plugin/download_manager/client_main/download/152/blesta-${BLESTA_VERSION}.zip
+ curl -Lo blesta.zip https://account.blesta.com/client/plugin/download_manager/client_main/download/152/blesta-${BLESTA_VERSION}.zip \
  && unzip bleta.zip \
  && rm bleta.zip \
  && chown nginx:nginx * -R
