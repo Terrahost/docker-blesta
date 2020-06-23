@@ -1,0 +1,24 @@
+##
+# docker-compose extra services
+# These services are completely optional, as they arent required to operate
+# from the base yaml file.
+##
+
+##
+# Let's Encrypt Certbot
+# This service provides free SSL certificates that can be used to connect to the world. 
+# Uncomment if you are using the panel on its own (without a reverse proxy). It is 
+# recommended to use the webroot plugin. To get a certificate, run "docker-compose 
+# run --rm certbot --webroot -w /etc/letsencrypt/webroot -d {domain}" and follow
+# the instructions on screen. 
+##
+certbot:
+  command: renew
+  image: certbot/certbot
+  volumes:
+  - ./letsencrypt:/etc/letsencrypt
+# If you are using the certbot container, apply this to the blesta container
+blesta:
+  volumes:
+  - ./letsencrypt:/etc/letsencrypt
+  - ./letsencrypt/webroot/.well-known:/var/www/html/.well-known

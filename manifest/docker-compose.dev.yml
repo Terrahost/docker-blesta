@@ -1,0 +1,9 @@
+# Build services for dockerizing
+version: '2.1'
+services:
+  blesta:
+    build:
+      args:
+        VERSION: ${BLESTA_VERSION}
+      context: ./manifest/blesta
+    image: terrahost/docker-blesta:${BLESTA_VERSION}
