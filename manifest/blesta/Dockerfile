@@ -13,7 +13,7 @@ ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-a
 
 RUN \
     apk --update add ca-certificates && \
-    echo "https://dl.bintray.com/php-alpine/v3.11/php-7.4" >> /etc/apk/repositories
+    echo "https://dl.bintray.com/php-alpine/v3.11/php-7.3" >> /etc/apk/repositories
 
 RUN \
     apk add --update tar unzip zip curl gettext nginx php php-common php-pdo_mysql php-curl php-openssl \
