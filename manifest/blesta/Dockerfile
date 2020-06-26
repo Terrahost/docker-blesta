@@ -33,8 +33,7 @@ RUN \
  
 RUN \
     curl -Lo blesta.zip https://account.blesta.com/client/plugin/download_manager/client_main/download/152/blesta-${BLESTA_VERSION}.zip \
-    && unzip blesta.zip \
-    && mv blesta/ .. \
+    && unzip blesta.zip -d /var/www \
     && rm blesta.zip \
     && chown nginx:nginx * -R
 
