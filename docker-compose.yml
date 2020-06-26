@@ -19,7 +19,7 @@ services:
 # Blesta
 # This is the main service that will be seen publically.
 ##
-  panel:
+  blesta:
     depends_on:
     - mysql
     image: terrahost/docker-blesta:latest
