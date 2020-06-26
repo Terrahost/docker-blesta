@@ -8,6 +8,7 @@ First make sure that your docker build is up to date (At the time, this works on
 Clone/Download the repository to your local storage.
 
 
+Rename the provided .env.example as .env
 
 Edit variables to fit your need, such as database password and URL.
 
