@@ -9,8 +9,7 @@ services:
 # this can be safely removed.
 ##
   mysql:
-    env_file: .env
-    image: mariadb:10.4
+    image: mariadb:10.5
     restart: always
     volumes:
     - ./db:/var/lib/mysql
@@ -23,7 +22,6 @@ services:
   panel:
     depends_on:
     - mysql
-    env_file: .env
     image: terrahost/docker-blesta:latest
     restart: always
     volumes:
