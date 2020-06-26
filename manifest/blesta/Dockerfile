@@ -7,7 +7,7 @@ ARG VERSION
 ENV STARTUP_TIMEOUT=5 \
     BLESTA_VERSION=${VERSION}
 
-WORKDIR /var/www/
+WORKDIR /var/www/blesta
 
 ADD https://dl.bintray.com/php-alpine/key/php-alpine.rsa.pub /etc/apk/keys/php-alpine.rsa.pub
 
@@ -29,11 +29,12 @@ RUN \
     && rm ioncube.tar.gz
 
 RUN \
-    mkdir -p /run/nginx
+    mkdir -p /var/www/blesta /run/nginx
  
 RUN \
     curl -Lo blesta.zip https://account.blesta.com/client/plugin/download_manager/client_main/download/152/blesta-${BLESTA_VERSION}.zip \
     && unzip blesta.zip \
+    && mv blesta/ .. \
     && rm blesta.zip \
     && chown nginx:nginx * -R
 
