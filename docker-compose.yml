@@ -10,6 +10,7 @@ services:
 ##
   mysql:
     image: mariadb:10.5
+    env_file: .env
     restart: always
     volumes:
     - ./db:/var/lib/mysql
@@ -22,6 +23,7 @@ services:
   blesta:
     depends_on:
     - mysql
+    env_file: .env
     image: terrahost/docker-blesta:latest
     restart: always
     volumes:
