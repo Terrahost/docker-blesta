@@ -1,5 +1,3 @@
-CURRENTLY IN DEVELOPMENT - THIS DOES NOT WORK CORRECTLY.
-
 # Blesta Dockerfile
 
 [![Docker Repository on Quay](https://quay.io/repository/terrahost/docker-blesta/status "Docker Repository on Quay")](https://quay.io/repository/terrahost/docker-blesta)
