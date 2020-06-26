@@ -21,4 +21,4 @@ certbot:
 blesta:
   volumes:
   - ./letsencrypt:/etc/letsencrypt
-  - ./letsencrypt/webroot/.well-known:/var/www/html/.well-known
+  - ./letsencrypt/webroot/.well-known:/var/www/blesta/.well-known
