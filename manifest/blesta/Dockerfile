@@ -21,7 +21,7 @@ RUN \
     php-gmp php-imap php-simplexml php-zlib tini
 
 RUN \
-    cd /tmp
+    cd /tmp \
     && curl -sSL https://downloads.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz -o ioncube.tar.gz \
     && tar -xf ioncube.tar.gz \
     && mv ioncube/ioncube_loader_lin_7.3.so /usr/lib/php/modules/ \
