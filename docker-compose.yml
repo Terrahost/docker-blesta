@@ -29,8 +29,3 @@ services:
     ports:
     - 80:80
     - 443:443
-
-    # Docker socket and directory, needed to communicate to docker
-    # NOTE: If you are using docker in a different directory, please change below to reflect that!
-    - ${DOCKER_ROOT:-/var/lib/docker}:${DOCKER_ROOT:-/var/lib/docker}
-    - ${DOCKER_SOCKET:-/var/run/docker.sock}:${DOCKER_SOCKET:-/var/run/docker.sock}
